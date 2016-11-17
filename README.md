@@ -148,8 +148,9 @@ numlockx on
 #chromium-browser
 
 while true; do
-        google-chrome --app=https://flyers.udayton.edu/search/j --incognito &
+        google-chrome --app=http://127.0.0.1/ --incognito &
         wait
+        sleep 3
 done
 ```
 set the file to be exec
@@ -237,5 +238,35 @@ server.bind = "127.0.0.1"
 Load php files to the location :
 ```
 /var/www/html
+```
+
+Sending data to an external webdav server
+----
+
+create a file "send_csv.sh"
+
+```
+#!/bin/bash
+
+FILE_NAME="filename_prefix.$(date -d "today" + "%Y%m%d%H%M").csv.gz"
+gzip -c -9 /var/www/guestbook.csv > /root/$FILE_NAME
+sleep 3
+
+curl -T /root/$FILE_NAME http://username:password@hostname.server.com/webdav/$FILE_NAME
+sleep 3
+```
+
+make it exec
+```
+chmod +x send_csv.sh
+```
+
+as root set it to be called every (set interval) .. in this case every hour
+```
+crontab -e
+```
+
+```
+0 * * * * /root/send_csv.sh
 ```
 

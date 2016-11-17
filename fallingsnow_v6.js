@@ -1,4 +1,5 @@
-﻿// The star of every good animation
+// https://www.kirupa.com/html5/the_falling_snow_effect.htm
+// The star of every good animation
 var requestAnimationFrame = window.requestAnimationFrame || 
                             window.mozRequestAnimationFrame || 
                             window.webkitRequestAnimationFrame ||

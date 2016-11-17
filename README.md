@@ -141,26 +141,16 @@ xset s off
 xset s noblank
 xset -dpms
 
-#/usr/bin/xmodmap -e "pointer = 1 2 32 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 3"
-
-xmodmap ~/.xmodmaprc
+xmodmap /home/kiosk/.xmodmaprc
 
 numlockx on
 
 #chromium-browser
 
 while true; do
-        /sbin/ifdown wlan0 &
-        wait
-        #/sbin/ifup wlan0 &
-        #wait
-        #chromium --app-shell-host-window-bounds=1920x1080 --proxy-server="127.0.0.1:8888" --app=http://localhost --incognito
-        #chromium --app-shell-host-window-bounds=1440x900 --app=https://university-of-dayton.culturalspot.org/exhibit/representations-of-the-flight-to-egypt-on-stamps/OAJSsoZqg$
-        google-chrome --app=https://flyers.udayton.edu/search/j --incognito
-        /sbin/ifdown wlan0 &
+        google-chrome --app=https://flyers.udayton.edu/search/j --incognito &
         wait
 done
-#END start_kiosk.sh file
 ```
 set the file to be exec
 ```

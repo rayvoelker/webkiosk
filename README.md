@@ -205,7 +205,7 @@ exec /home/kiosk/start_kiosk.sh
 
 set the cron entry from the kiosk users login
 ```
-crontab -e
+$ crontab -e
 ```
 
 ```
@@ -214,10 +214,38 @@ crontab entry:
 ```
 
 (OPTIONALLY REMOVE SSH SERVER)
-```
-apt-get remove openssh-server
-apt-get autoremove
+```shell
+# apt-get remove openssh-server
+# apt-get autoremove
 ```
 
 (REBOOT)
 sudo shutdown -r now
+
+
+Install optional local http server with PHP
+----
+
+This will allow us to serve local http pages, and do some form processing 
+
+```shell
+# apt-get install lighttpd php5-cgi
+# lighty-enable-mod fastcgi
+# lighty-enable-mod fastcgi-php
+# service lighttpd force-reload
+```
+
+For added security, bind the http server to localhost only
+```shell
+# nano /etc/lighttpd/lighttpd.conf
+```
+add the following line ...
+```
+server.bind = "127.0.0.1"
+```
+
+Load php files to the location :
+```
+/var/www/html
+```
+

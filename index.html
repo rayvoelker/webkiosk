@@ -36,7 +36,7 @@ h1.main-header-text {
 	font: normal 40px serif;
 }
 
-#main-header-background {
+.main-header-background {
 	/*background-color: firebrick;*/
 	background-color: #d52728;
 	width: 100%;
@@ -98,7 +98,7 @@ h1.main-header-text {
  <p class="snowflake">*</p>
 </div>
 
-	<div id="main-header-background">
+	<div class="main-header-background">
 	</div>
 	<div id="main-header">
 		<!--
@@ -119,7 +119,7 @@ h1.main-header-text {
 		">At The Manger</span>
 
 	</div>
-	<div id="main-header-background">
+	<div class="main-header-background">
 	</div>
 
 
@@ -150,7 +150,7 @@ Please sign our electronic guestbook.
 	Your e-mail, and phone are used to contact you if you are the drawing winner, and your address is used for future At the Manger mailings.
 </h2>
 
-<form role="form" class="form-large form-horizontal" action="submit.php" method="post">
+<form class="form-large form-horizontal" action="submit.php" method="post">
 
 
 	<div class="form-group">
@@ -173,7 +173,7 @@ Please sign our electronic guestbook.
 		<div class="col-md-offset-1 col-md-4">
 			<div class="form-group">
 				<label for="input_phone">Phone Number</label>
-				<input name="phone" type="text" class="form-control input-lg" id="input_name" placeholder="Phone Number">
+				<input name="phone" type="text" class="form-control input-lg" id="input_phone" placeholder="Phone Number">
 			</div>
 		</div>
 
@@ -192,28 +192,28 @@ Please sign our electronic guestbook.
 
 		<div class="col-md-offset-1 col-md-3">
 				<div class="form-group">
-					<label for="input_name">City</label>
+					<label for="input_city">City</label>
 					<input name="city" required placeholder="City" type="text" class="form-control input-lg" id="input_city">
 				</div>
 		</div>
 
 		<div class="col-md-offset-1 col-md-1">
 				<div class="form-group">
-					<label for="input_name">State</label>
+					<label for="input_state">State</label>
 					<input name="state" required placeholder="St" type="text" class="form-control input-lg" id="input_state">
 				</div>
 		</div>
 
 		<div class="col-md-offset-1 col-md-2">
 				<div class="form-group">
-					<label for="input_name">Zip</label>
+					<label for="input_zip">Zip</label>
 					<input name="zip" required placeholder="Zip" type="text" class="form-control input-lg" id="input_zip">
 				</div>
 		</div>
 
 	</div>
 
-	<div id="newsletter_group" class="form-group"">
+	<div id="newsletter_group" class="form-group">
 		<label class="checkbox" style="font-weight:200;">
 			<input name="marian_newsletter" value="get_marian_newsletter" type="checkbox" style="width:30px; height:30px;"> I would like to receive the Marian Library newsletter.
 		</label>
@@ -228,6 +228,23 @@ Please sign our electronic guestbook.
 		">*We may use your comments for promotional or assessment projects.</div>
 	</div>
 
+<!--
+/*
+Catholic Telegraph
+Dayton City Paper
+Dayton Daily News
+Dayton Mom's Blog
+Oakwood Register
+Ohio Magazine
+Facebook
+Friend, family or coworker
+Church Bulletin
+School Handout
+Promotional Card
+TV
+Email
+*/
+-->
 
 	<div id="referrer" class="form-group">
 
@@ -236,7 +253,35 @@ Please sign our electronic guestbook.
 		<div class="row">
 			<div class="col-md-6">
 				<label class="checkbox" style="font-weight:200;">
-					<input name="referrer[]" type="checkbox" value="Dayton Daily News ad" style="width:30px; height:30px; "> Dayton Daily News Ad
+					<input name="referrer[]" type="checkbox" value="Catholic Telegraph" style="width:30px; height:30px; "> Catholic Telegraph
+				</label>
+			</div>
+
+			<div class="col-md-6">
+				<label class="checkbox" style="font-weight:200;">
+					<input name="referrer[]" type="checkbox" value="Dayton City Paper" style="width:30px; height:30px; "> Dayton City Paper
+				</label>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				<label class="checkbox" style="font-weight:200;">
+					<input name="referrer[]" type="checkbox" value="Dayton Daily News" style="width:30px; height:30px; "> Dayton Daily News
+				</label>
+			</div>
+
+			<div class="col-md-6">
+				<label class="checkbox" style="font-weight:200;">
+					<input name="referrer[]" type="checkbox" value="Dayton Mom's Blog" style="width:30px; height:30px; "> Dayton Mom's Blog
+				</label>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				<label class="checkbox" style="font-weight:200;">
+					<input name="referrer[]" type="checkbox" value="Oakwood Register" style="width:30px; height:30px; "> Oakwood Register
 				</label>
 			</div>
 
@@ -250,21 +295,38 @@ Please sign our electronic guestbook.
 		<div class="row">
 			<div class="col-md-6">
 				<label class="checkbox" style="font-weight:200;">
-					<input name="referrer[]" type="checkbox" value="Catholic Telegraph" style="width:30px; height:30px; "> Catholic Telegraph
+					<input name="referrer[]" type="checkbox" value="Facebook" style="width:30px; height:30px; "> Facebook
 				</label>
 			</div>
 
+			<div class="col-md-6">
+				<label class="checkbox" style="font-weight:200;">
+					<input name="referrer[]" type="checkbox" value="Friend family or coworker" style="width:30px; height:30px; "> Friend, family or coworker
+				</label>
+
+			</div>
+		</div>
+
+
+		<div class="row">
 			<div class="col-md-6">
 				<label class="checkbox" style="font-weight:200;">
 					<input name="referrer[]" type="checkbox" value="Church Bulletin" style="width:30px; height:30px; "> Church Bulletin
 				</label>
 			</div>
-		</div>
 
-		<div class="row">
 			<div class="col-md-6">
 				<label class="checkbox" style="font-weight:200;">
 					<input name="referrer[]" type="checkbox" value="School Handout" style="width:30px; height:30px; "> School Handout
+				</label>
+			</div>
+		</div>
+		
+		
+		<div class="row">
+			<div class="col-md-6">
+				<label class="checkbox" style="font-weight:200;">
+					<input name="referrer[]" type="checkbox" value="Promotional Card" style="width:30px; height:30px; "> Promotional Card
 				</label>
 			</div>
 
@@ -274,42 +336,26 @@ Please sign our electronic guestbook.
 				</label>
 			</div>
 		</div>
-
+		
+		
 		<div class="row">
 			<div class="col-md-6">
 				<label class="checkbox" style="font-weight:200;">
-					<input name="referrer[]" type="checkbox" value="News Article" style="width:30px; height:30px; "> News Article
+					<input name="referrer[]" type="checkbox" value="Email" style="width:30px; height:30px; "> Email
 				</label>
 			</div>
 
 			<div class="col-md-6">
-				<label class="checkbox" style="font-weight:200;">
-					<input name="referrer[]" type="checkbox" value="WHIO.com-Dayton.com" style="width:30px; height:30px; "> WHIO.com / Dayton.com
-				</label>
-
+				
 			</div>
 		</div>
-
-
-		<div class="row">
-			<div class="col-md-6">
-				<label class="checkbox" style="font-weight:200;">
-					<input name="referrer[]" type="checkbox" value="Facebook" style="width:30px; height:30px; "> Facebook.com
-				</label>
-			</div>
-
-			<div class="col-md-6">
-
-			</div>
-		</div>
-
-
+		
 
 	</div>
 
 
 
-	<div id="submit-clear class="form-group">
+	<div id="submit-clear" class="form-group">
 
 		<div class="row">
 			<div class="col-md-6">

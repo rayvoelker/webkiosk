@@ -277,3 +277,23 @@ crontab -e
 0 * * * * /root/send_csv.sh
 ```
 
+BONUS
+---
+
+Mount a tmpfs (ramdisk) for chrome's cache directory
+
+`/etc/fstab` entry
+
+```
+#ram disk
+none	/home/kiosk/.cache/google-chrome	tmpfs	nodev,nosuid,noexec,nodiratime,size=100M	0 0
+```
+
+change the google chrome command to use the following startup
+```
+rm -Rf /home/kiosk/.cache/google-chrome/*
+google-chrome --app=http://127.0.0.1/ --incognito --disk-cache-dir=/home/kiosk/.cache/google-chrome --disk-cache-size=104857600
+```
+
+
+

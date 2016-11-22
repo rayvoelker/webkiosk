@@ -38,6 +38,12 @@ $data_array = array (
 	"referrer_4" => htmlspecialchars( $_POST[referrer][4] ),
 	"referrer_5" => htmlspecialchars( $_POST[referrer][5] ),
 	"referrer_6" => htmlspecialchars( $_POST[referrer][6] ),
+	"referrer_7" => htmlspecialchars( $_POST[referrer][7] ),
+	"referrer_8" => htmlspecialchars( $_POST[referrer][8] ),
+	"referrer_9" => htmlspecialchars( $_POST[referrer][9] ),
+	"referrer_10" => htmlspecialchars( $_POST[referrer][10] ),
+	"referrer_11" => htmlspecialchars( $_POST[referrer][11] ),
+	"referrer_12" => htmlspecialchars( $_POST[referrer][12] ),
 	"comments" => htmlspecialchars( $_POST["comments"] )
 );
 

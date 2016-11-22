@@ -249,11 +249,18 @@ create a file "send_csv.sh"
 #!/bin/bash
 
 FILE_NAME="filename_prefix.$(date -d "today" + "%Y%m%d%H%M").csv.gz"
-gzip -c -9 /var/www/guestbook.csv > /root/$FILE_NAME
-sleep 3
+/bin/gzip -c -9 /var/www/guestbook.csv > /root/$FILE_NAME
 
-curl -T /root/$FILE_NAME http://username:password@hostname.server.com/webdav/$FILE_NAME
-sleep 3
+/sbin/ifup wlan0 &
+wait
+/bin/sleep 10
+
+/usr/bin/curl -T /root/$FILE_NAME http://username:password@hostname.server.com/webdav/$FILE_NAME &
+wait
+/bin/sleep 3
+
+/sbin/ifdown wlan0 &
+wait
 ```
 
 make it exec
